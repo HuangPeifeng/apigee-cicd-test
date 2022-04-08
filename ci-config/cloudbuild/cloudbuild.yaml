@@ -108,17 +108,17 @@ steps:
             -Ddeployment.description="CloudRun Build: $BUILD_ID"
         fi
     # Run integration tests
-  - name: node
-    id: "Integration Test"
-    entrypoint: "bash"
-    args:
-      - "-c"
-      - |-
-        source env.txt && \
-        npm run integration-test | tee report.e2e.html && \
-        if [ ${PIPESTATUS[0]} -ne "0" ]; then exit -1; fi
-    env:
-      - "TEST_HOST=$_INT_TEST_HOST"
+  # - name: node
+  #   id: "Integration Test"
+  #   entrypoint: "bash"
+  #   args:
+  #     - "-c"
+  #     - |-
+  #       source env.txt && \
+  #       npm run integration-test | tee report.e2e.html && \
+  #       if [ ${PIPESTATUS[0]} -ne "0" ]; then exit -1; fi
+  #   env:
+  #     - "TEST_HOST=$_INT_TEST_HOST"
     # Copy coverage reports and other deployment artifacts to a storage bucket
   - name: "gcr.io/cloud-builders/gsutil"
     id: "Archive Report"
