@@ -1,4 +1,3 @@
-
 # CICD Pipeline
 
 This project contains an reference implementation for a CI/CD pipeline for
