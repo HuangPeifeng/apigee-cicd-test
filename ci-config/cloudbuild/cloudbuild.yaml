@@ -101,7 +101,6 @@ steps:
           source env.txt && \
           mvn clean install -ntp \
             -P"googleapi" \
-            -Denv="$${APIGEE_ENV}" \
             -Dtoken="$${APIGEE_BUILD_TOKEN}" \
             -Dorg="$_DEPLOYMENT_ORG" \
             -Ddeployment.suffix="$${APIGEE_DEPLOYMENT_SUFFIX}" \
